@@ -6,4 +6,12 @@
 */
 
 // your code
-let factorial
+let factorial = 1;
+
+let step = 1;
+
+while (step <= 10) {
+  factorial *= step;
+  step++;
+}
+console.log(`Ваш факториал числа 10 равен ${factorial}`);
