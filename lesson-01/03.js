@@ -5,4 +5,17 @@
 */
 
 // your code
-let sum
+let sum = 0;
+
+let step = 0;
+
+while (step <= 20) {
+  if (step % 2) {
+    sum += step;
+    // console.log(`Ваш шаг ${step}`);
+    // console.log(`Ваша сумма на данном шаге ${sum}`);
+  }
+  step++;
+}
+
+console.log(sum);
