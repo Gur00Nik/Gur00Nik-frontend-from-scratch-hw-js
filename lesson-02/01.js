@@ -8,11 +8,50 @@
 */
 
 // тестовые данные (значения можно менять)
-const isAdmin = false
-const isVerifiedUser = true
-const hasSpecialPermission = true
-const hasTemporaryPass = false
+const isAdmin = false;
+const isVerifiedUser = true;
+const hasSpecialPermission = true;
+const hasTemporaryPass = false;
 
-let isAccess
+let isAccess;
 
+// Реализация через функцию
+
+// function isUserVerification() {
+//   let conditionAccess =
+//     (isAdmin || isVerifiedUser) && (hasSpecialPermission || hasTemporaryPass);
+//   return conditionAccess ? (isAccess = true) : (isAccess = false);
+// }
+
+// isUserVerification();
+
+// Реализация через условное ветвление If, Else
+
+// if ((isAdmin || isVerifiedUser) && (hasSpecialPermission || hasTemporaryPass)) {
+//   isAccess = true;
+// } else {
+//   isAccess = false;
+// }
+
+// Реализация через тернарный оператор
+
+(isAdmin || isVerifiedUser) && (hasSpecialPermission || hasTemporaryPass)
+  ? (isAccess = true)
+  : (isAccess = false);
+
+// Реализация через конструкцию Switch
+
+// let conditionAccess =
+//   (isAdmin || isVerifiedUser) && (hasSpecialPermission || hasTemporaryPass);
+
+// switch (conditionAccess) {
+//   case true:
+//     isAccess = true;
+//     break;
+//   case false:
+//     isAccess = false;
+//     break;
+// }
+
+console.log(isAccess);
 // your code

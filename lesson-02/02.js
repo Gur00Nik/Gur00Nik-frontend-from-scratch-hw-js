@@ -7,16 +7,44 @@
 * Для успешного прохождения тестов не меняйте названия переменных!
 */
 
-let dice1 // your code
-let dice2 // your code
-let isWinningDouble // your code
+let dice1; // your code
+let dice2; // your code
+let isWinningDouble; // your code
 
-/*
-console.log('Первый бросок: ' + dice1)
-console.log('Второй бросок: ' + dice2)
+// Реализация через функцию
+
+// function generateValueDice() {
+//   return Math.floor(Math.random() * 6 + 1);
+// }
+
+// function isWinning() {
+//   dice1 = generateValueDice();
+//   dice2 = generateValueDice();
+
+//   let conditionWinning = dice1 === dice2 && dice1 > 3;
+
+//   switch (conditionWinning) {
+//     case true:
+//       isWinningDouble = true;
+//       console.log("Ваш бросок выйгрышный");
+//       break;
+//     case false:
+//       console.log("Ваш бросок обычный");
+//       break;
+//   }
+// }
+
+// isWinning();
+
+dice1 = Math.floor(Math.random() * 6 + 1);
+dice2 = Math.floor(Math.random() * 6 + 1);
+
+isWinningDouble = dice1 === dice2 && dice1 > 3;
+
+console.log("Первый бросок: " + dice1);
+console.log("Второй бросок: " + dice2);
 if (isWinningDouble) {
-  console.log('Выигрышный дубль!')
+  console.log("Выигрышный дубль!");
 } else {
-  console.log('Не выигрышный дубль.')
+  console.log("Не выигрышный дубль.");
 }
-*/
