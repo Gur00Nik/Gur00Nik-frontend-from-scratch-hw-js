@@ -14,15 +14,15 @@ includesElement([1, 2, 3], 2)  // должен вернуть `true`.
 */
 
 function includesElement(array, element) {
-  // let result = false;
+  let result = false;
 
-  // for (let item = 0; item < array.length; item++) {
-  //   if (element === array[item]) {
-  //     result = true;
-  //     break;
-  //   }
-  // }
-  return array.filter((item) => item !== element);
+  for (let item = 0; item < array.length; item++) {
+    if (element === array[item]) {
+      result = true;
+      break;
+    }
+  }
+  return result;
 }
 
-// console.log(includesElement([1, 2, 3, 4, 5, 6, 7], 3));
+console.log(includesElement([1, 2, 3, 4, 5, 6, 7], 3));
