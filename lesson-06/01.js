@@ -13,23 +13,20 @@
 Функция `filter` должна возвращать новый массив, содержащий только те элементы `array`, для которых `callback` возвращает `true`.
 */
 
-/* Пример использования:
-const numbers = [1, 2, 3, 4, 5]
-
-const oddNumbers = filter(numbers, (element, index) => {
-  return element % 2 !== 0
-});
-
-console.log(oddNumbers) // Должен вывести: [1, 3, 5]
-*/
-
-// const oddNumbers = (_, index) => (index % 2 ? false : true);
+// Пример использования:
+const numbers = [1, 2, 3, 4, 5];
 
 const filter = (array, callback) => {
   let result = [];
   for (let i = 0; i < array.length; i++) {
-    // console.log(callback(array[i], i));
     if (callback(array[i], i)) result.push(array[i]);
   }
   return result;
 };
+
+const oddNumbers = filter(numbers, (element, index) => {
+  return element % 2 !== 0;
+});
+
+console.log(oddNumbers);
+// Должен вывести: [1, 3, 5]

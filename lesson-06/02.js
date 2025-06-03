@@ -12,21 +12,9 @@
 Ваша функция `map` должна возвращать новый массив, где каждый элемент является результатом вызова функции `callback` на каждом элементе исходного массива.
 */
 
-/*
-Пример использования вашей функции:
+// Пример использования вашей функции:
 
-const numbers = [1, 2, 3, 4, 5]
-
-const doubledNumbers = map(numbers, (element, index) => {
-  return element * 2
-})
-
-console.log(doubledNumbers) // Должен вывести: [2, 4, 6, 8, 10]
-*/
-
-// const doubleNumbers = (element) => {
-//   return element * 2;
-// };
+const numbers = [1, 2, 3, 4, 5];
 
 const map = (array, callback) => {
   let result = [];
@@ -37,4 +25,8 @@ const map = (array, callback) => {
   return result;
 };
 
-// console.log(map([10, 20, 30], doubleNumbers));
+const doubledNumbers = map(numbers, (element, index) => {
+  return element * 2;
+});
+
+console.log(doubledNumbers); // Должен вывести: [2, 4, 6, 8, 10]
