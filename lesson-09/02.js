@@ -31,12 +31,11 @@ const countdownDisplay = document.getElementById("countdown");
 
 let isTimerStarted;
 let timerId;
-let counter;
+let counter = 3;
 
 startButton.addEventListener("click", () => {
   isTimerStarted = false;
   startButton.setAttribute("disabled", "true");
-  counter = 3;
 
   countdownDisplay.textContent = counter;
 
