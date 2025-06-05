@@ -29,31 +29,33 @@ const startButton = document.getElementById("start");
 const cancelButton = document.getElementById("cancel");
 const countdownDisplay = document.getElementById("countdown");
 
-let isTimerStarted;
+let isTimerStarted = false;
 let timerId;
 let counter = 3;
 
 startButton.addEventListener("click", () => {
-  isTimerStarted = false;
-  startButton.setAttribute("disabled", "true");
+  if (!isTimerStarted) {
+    isTimerStarted = true;
 
-  countdownDisplay.textContent = counter;
-
-  timerId = setInterval(() => {
-    --counter;
     countdownDisplay.textContent = counter;
-    if (!counter) {
-      countdownDisplay.textContent = "🚀";
-      isTimerStarted = true;
-      clearInterval(timerId);
-    }
-  }, 1000);
+
+    timerId = setInterval(() => {
+      --counter;
+      countdownDisplay.textContent = counter;
+      if (!counter) {
+        countdownDisplay.textContent = "🚀";
+        isTimerStarted = true;
+        clearInterval(timerId);
+      }
+    }, 1000);
+  }
 });
 
 cancelButton.addEventListener("click", () => {
-  if (!isTimerStarted) {
+  if (counter) {
+    isTimerStarted = false;
     countdownDisplay.textContent = "Отменено";
     clearInterval(timerId);
-    startButton.removeAttribute("disabled");
+    counter = 3;
   }
 });
