@@ -31,27 +31,29 @@ const countdownDisplay = document.getElementById("countdown");
 
 let isTimerStarted = false;
 let timerId;
+let counter;
 
 startButton.addEventListener("click", () => {
-  let counter = 3;
+  clearInterval(timerId);
+  isTimerStarted = false;
 
+  counter = 3;
   countdownDisplay.textContent = counter;
 
   timerId = setInterval(() => {
     --counter;
-
     countdownDisplay.textContent = counter;
 
-    if (counter === 0) {
-      clearInterval(timerId);
+    if (!counter) {
       countdownDisplay.textContent = "🚀";
       isTimerStarted = true;
+      clearInterval(timerId);
     }
   }, 1000);
 });
 
 cancelButton.addEventListener("click", () => {
-  if (!isTimerStarted) {
+  if (isTimerStarted === false) {
     countdownDisplay.textContent = "Отменено";
     clearInterval(timerId);
   }
