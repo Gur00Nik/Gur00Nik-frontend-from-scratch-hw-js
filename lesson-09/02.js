@@ -42,7 +42,7 @@ startButton.addEventListener("click", () => {
       --counter;
       countdownDisplay.textContent = counter;
 
-      if (!counter) {
+      if (counter === 0) {
         countdownDisplay.textContent = "🚀";
         clearInterval(timerId);
       }
@@ -53,6 +53,7 @@ startButton.addEventListener("click", () => {
 cancelButton.addEventListener("click", () => {
   if (isTimerStarted && counter) {
     clearInterval(timerId);
+    isTimerStarted = false;
     countdownDisplay.textContent = "Отменено";
   }
 });
