@@ -35,28 +35,24 @@ let counter = 3;
 
 startButton.addEventListener("click", () => {
   if (!isTimerStarted) {
-    isTimerStarted = true;
-
     countdownDisplay.textContent = counter;
-
+    isTimerStarted = true;
     timerId = setInterval(() => {
       --counter;
       countdownDisplay.textContent = counter;
       if (!counter) {
         countdownDisplay.textContent = "🚀";
-        isTimerStarted = true;
         clearInterval(timerId);
+        isTimerStarted = false;
       }
     }, 1000);
   }
 });
 
 cancelButton.addEventListener("click", () => {
-  if (counter && isTimerStarted) {
+  if (isTimerStarted && counter) {
     clearInterval(timerId);
-
     countdownDisplay.textContent = "Отменено";
-
     isTimerStarted = false;
   }
 });
