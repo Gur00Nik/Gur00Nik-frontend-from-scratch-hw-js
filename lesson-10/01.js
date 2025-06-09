@@ -102,6 +102,7 @@ const controller = {
   },
   deleteMovie(id) {
     model.deleteMovie(id);
+    view.displayMessage("Фильм успешно удалён!");
   },
 };
 
